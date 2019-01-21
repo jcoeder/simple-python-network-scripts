@@ -65,7 +65,7 @@ for switch in engenius:
     remote_conn.send(switch[1] + '\n')
     time.sleep(1)
     output = remote_conn.recv(1000)
-    remote_conn.send('switchport hybrid allowed vlan add' + vlan_id + 'tagged\n')
+    remote_conn.send('switchport hybrid allowed vlan add ' + vlan_id + ' tagged\n')
     time.sleep(1)
     output = remote_conn.recv(1000)
 
