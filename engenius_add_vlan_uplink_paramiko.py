@@ -24,7 +24,7 @@ for switch in engenius:
     #Connect to switch and build ssh connection
     remote_conn_pre = paramiko.SSHClient()
     remote_conn_pre.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    remote_conn_pre.connect(switch, username=username, password=password, look_for_keys=False, allow_agent=False)
+    remote_conn_pre.connect(switch[0], username=username, password=password, look_for_keys=False, allow_agent=False)
     print('SSH connection established to ' + switch[0])
     remote_conn = remote_conn_pre.invoke_shell()
     print('Interactive SSH session established')
