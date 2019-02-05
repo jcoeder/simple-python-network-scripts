@@ -1,3 +1,8 @@
+#########################################################
+#THIS SCRIPT DOES NOT WORK BECAUSE OF ENGENIOUS BROKE SSH
+#BUT MAY ONE DAY IF WE UPDATE SOFTWARE
+#########################################################
+
 import paramiko
 import time
 import getpass
