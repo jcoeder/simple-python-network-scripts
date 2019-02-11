@@ -83,9 +83,15 @@ for device in engenious_devices:
             break
         print(line,end="")
 
-    #Add device to LibreNMS
+    headers = {
+    'X-Auth-Token': api_token,}
+    response = requests.delete('http://10.32.26.51/api/v0/devices/' + device + '', headers=headers)
+    print('delete ' + device)
+    print(response)
+
     headers = {'X-Auth-Token': api_token,}
     data = '{"hostname":"' + device + '","version":"v2c","community":"' + snmp_community + '"}'
     print(data)
     response = requests.post('http://10.32.26.51/api/v0/devices', headers=headers, data=data)
     print(response)
+
