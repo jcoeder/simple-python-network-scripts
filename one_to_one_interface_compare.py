@@ -9,6 +9,8 @@ __version__ = "0.0.1"
 __license__ = "MIT"
 
 from ciscoconfparse import CiscoConfParse
+import ipdb
+import pprint
 
 
 old_conf = CiscoConfParse('Old Config.txt', syntax='ios')
@@ -42,7 +44,7 @@ uncommon_interfaces = {}
 
 
 for key in old_interfaces:
-    if not(key in new_interfaces and old_interfaces[key] == new_interfaces[key]):
+    if not(key in new_interfaces):
 	    uncommon_interfaces[key] = old_interfaces[key]
     elif (key in new_interfaces and old_interfaces[key] == new_interfaces[key]) and (new_interfaces[key]['access_vlan'] == old_interfaces[key]['access_vlan']) and (new_interfaces[key]['voice_vlan'] == old_interfaces[key]['voice_vlan']):
         common_interfaces[key] = old_interfaces[key]
@@ -51,7 +53,7 @@ for key in old_interfaces:
 
 
 for key in new_interfaces:
-    if not(key in old_interfaces and new_interfaces[key] == old_interfaces[key]):
+    if not(key in old_interfaces):
 	    uncommon_interfaces[key] = new_interfaces[key]
 
 
