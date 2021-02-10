@@ -56,6 +56,8 @@ for key in new_interfaces:
 
 
 with open('results.txt', 'w') as f:
+    print('*********MATCHING INTERFACES*********')
+    f.write('*********MATCHING INTERFACES*********\n')
     for key in common_interfaces:
         print(key)
         f.write(key + '\n')
@@ -81,7 +83,9 @@ with open('results.txt', 'w') as f:
             f.write('Interface does not exist\n')
         print('')
         f.write('\n')
-		
+
+    print('*********UNMATCHING INTERFACES*********')
+    f.write('*********UNMATCHING INTERFACES*********\n')
     for key in uncommon_interfaces:
         print(key)
         f.write(key + '\n')
