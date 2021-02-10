@@ -62,8 +62,8 @@ with open('results.txt', 'w') as f:
         print(key)
         f.write(key + '\n')
 
-        print("New Configuration")
-        f.write("New Configuration\n")
+        print("New Configuration:")
+        f.write("New Configuration:\n")
 
         try:
             print(new_interfaces[key])
@@ -72,8 +72,8 @@ with open('results.txt', 'w') as f:
             print('Interface does not exist')
             f.write('Interface does not exist\n')
 
-        print("Old Configuration")
-        f.write("Old Configuration\n")
+        print("Old Configuration:")
+        f.write("Old Configuration:\n")
 
         try:
             print(old_interfaces[key])
@@ -84,14 +84,14 @@ with open('results.txt', 'w') as f:
         print('')
         f.write('\n')
 
-    print('*********UNMATCHING INTERFACES*********')
-    f.write('*********UNMATCHING INTERFACES*********\n')
+    print('\n\n\n*********UNMATCHING INTERFACES*********')
+    f.write('\n\n\n*********UNMATCHING INTERFACES*********\n')
     for key in uncommon_interfaces:
         print(key)
         f.write(key + '\n')
 
-        print("New Configuration")
-        f.write("New Configuration\n")
+        print("New Configuration:")
+        f.write("New Configuration:\n")
 
         try:
             print(new_interfaces[key])
@@ -100,8 +100,8 @@ with open('results.txt', 'w') as f:
             print('Interface does not exist')
             f.write('Interface does not exist\n')
 
-        print("Old Configuration")
-        f.write("Old Configuration\n")
+        print("Old Configuration:")
+        f.write("Old Configuration:\n")
 
         try:
             print(old_interfaces[key])
